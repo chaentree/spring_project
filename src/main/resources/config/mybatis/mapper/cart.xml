@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="c">
+
+	<select id="cart_check" parameterType="cart" resultType="cart">
+		select * from n_cart where userid = #{userid} and product_id = #{product_id}
+	</select>
+	
+	<update id="cart_up" parameterType="cart">
+		UPDATE n_cart set cart_quantity = cart_quantity+1 where userid = #{userid} and product_id = #{product_id}
+	</update>
+	
+	
+	<insert id="cart_add" parameterType="cart">
+		INSERT INTO n_cart values(
+			seq_nike_idx.nextVal,
+			#{userid},
+			#{product_id},
+			1,
+			#{p_price},
+			#{p_size},
+			#{p_material},
+			#{p_name},
+			#{filename}		
+				)
+	</insert>
+	
+	<select id="c_list" parameterType="java.lang.String" resultType="cart">
+		select * from n_cart where userid = #{userid}
+	</select>
+	
+	
+	
+	<select id="totalprice" parameterType="java.lang.String" resultType="cart">
+			SELECT SUM((P_PRICE)*(cart_quantity)) AS totalprice FROM n_cart WHERE USERID = #{userid}
+	</select>
+	<select id="subprice" parameterType="java.lang.String" resultType="cart">
+			SELECT (P_PRICE)*(cart_quantity) AS subprice FROM n_cart WHERE USERID = #{userid}
+	</select>
+	
+	<update id="update_count" parameterType="cart">
+		UPDATE n_cart set cart_quantity = #{cart_quantity} where userid = #{userid} and product_id = #{product_id}
+	</update>
+	
+		
+	<delete id="c_delete" parameterType="java.util.HashMap">
+		delete from n_cart where cart_id=#{cart_id} and userid=#{userid}
+	</delete>
+
+	
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

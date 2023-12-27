@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="n">
+	<select id="member_list" resultType="member">
+		select * from n_member
+	</select>
+	<select id="id_check" parameterType="String" resultType="member">
+		select * from n_member where userid = #{userid}
+	</select>
+	<select id="pwd_check" resultType="member">
+		select * from n_member where userid = #{userid} AND pwd = #{pwd}
+	</select>
+	<insert id="sign" parameterType="member">
+		INSERT INTO n_member values(
+			seq_nike_idx.nextVal,
+			0,
+			#{userid},
+			#{gender},
+			#{email},
+			#{phone},
+			sysdate,
+			sysdate,
+			0,
+			'n',
+			#{birth},
+			#{pwd},
+			#{last_name},
+			#{first_name},
+			'대한민국'
+			)
+</insert>
+	<!-- 비밀번호찾기 수정 -->
+	<update id="modi_pwd" parameterType="member">
+		UPDATE n_member set pwd = #{pwd} where idx = #{idx}
+	</update>
+	
+	<!-- 계정탈퇴 -->
+	<delete id="del_mem" parameterType="member">
+		delete from n_member where userid = #{userid}
+	</delete>
+	<!-- 카트삭제 -->
+	<delete id="del_cart" parameterType="member">
+		delete from n_cart where userid = #{userid}
+	</delete>
+	<!-- 구매목록삭제 -->
+	<delete id="del_buy" parameterType="member">
+		delete from n_buy where userid = #{userid}
+	</delete>
+	
+	
+	<!-- 계정정보 수정 -->
+	<update id="modi_mem" parameterType="member">
+		UPDATE n_member set pwd = #{pwd}, last_name = #{last_name},
+			first_name = #{first_name}, phone = #{phone}, email = #{email}, last_update = sysdate where userid = #{userid}
+	</update>
+	<!-- 주소정보 -->
+	<update id="modi_addr" parameterType="member">
+		UPDATE n_member set addr = #{addr} where userid = #{userid}
+	</update>
+	
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

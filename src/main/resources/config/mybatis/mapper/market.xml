@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="m">
+
+	<select id="p_list" resultType="market" >
+		select * from n_product
+	</select>
+	<insert id="p_insert" parameterType="market">
+		insert into n_product values(
+			seq_nike_idx.nextVal,
+			1,
+			#{p_name},
+			#{p_price},
+			#{p_size},
+			#{p_material},
+			#{p_info},
+			#{p_stock},
+			sysdate,
+			0,
+			#{filename}
+		
+		)
+	</insert>
+	<!--  상품 상세 조회  -->
+<select id="p_detail" resultType="market" parameterType="int"> select * from n_product where product_id=#{product_id} </select>
+	
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,193 @@
+@charset "UTF-8";
+*{position:relative; padding:0; margin:0; font-family: 'Noto Sans KR', sans-serif;}
+li, ol, ul{list-style:none;}
+a{text-decoration:none;}
+a:hover{text-decoration:none;}
+img{display:block}
+body{width: 100vw; overflow-x: hidden; overflow-y: auto;}
+
+body h2{
+   font-size: 22px;
+   color: #111111;
+   font-weight: 400;
+   margin-bottom: 15px;
+}
+
+body p{
+   font-size: 16px;
+   color: #111111;
+   font-weight: 400;
+   margin-bottom: 5px;
+}
+
+.container{
+   width: 75vw;
+   margin: 40px auto;
+   display: flex;
+}
+
+.container .left-item{
+   width: 70%;
+   margin-right: 40px;
+}
+
+.container .item{
+   /* border-bottom: 1px solid #525252; */
+   margin-bottom: 50px;
+}
+
+.ship{
+   width: 75vw;
+   margin: 40px auto;
+}
+
+.container .right-item{
+   width: 30%;
+}
+
+.container .item{
+   display: flex;
+   justify-content: space-between;
+} 
+
+.container .p-content img{
+   display: inline-block;
+   margin-top: 25px;
+}
+
+.container .p-content img:first-child{
+   margin-right: 15px;
+}
+
+.container .right-item .p-price,
+.container .right-item .p-ship,
+.container .right-item .discount,
+.container .right-item .total-price{
+   display: flex;
+   justify-content: space-between;
+   margin-right: 10px;
+   margin-bottom: 10px;
+}
+
+.container .right-item .total-price{
+   border-top: 1px solid #525252;
+   border-bottom: 1px solid #525252;
+   padding: 16px 0;
+}
+
+.container .right-item #buy{
+   margin-top: 20px;
+   width: 410px;
+   height: 60px;
+   border-radius: 30px;
+   border: hidden;
+   background: #111111;
+   color: #ffffff;
+   font-size: 16px;
+   cursor: pointer;
+}
+
+@media(max-width:1540px){
+   .container .right-item #buy{
+      margin-top: 20px;
+      width: 330px;
+      height: 60px;
+      border-radius: 30px;
+      border: hidden;
+      background: #111111;
+      color: #ffffff;
+      font-size: 16px;
+      cursor: pointer;
+   }
+}
+.wishlist{
+   width: 75vw;
+   margin: 0 auto;
+}
+
+/* section8 */
+.section8{
+    max-width: 1400px; margin:70px auto;
+}
+
+.section8 .container{
+    display: flex;
+    width: 90vw;
+    margin: 0 auto;
+    margin-bottom: 15px;
+}
+
+/* section8 owl-carousel 플러그인 css부분 */
+.shoes-slider .owl-nav {
+   position: absolute;
+   top: 30%;
+   left: 0;
+   width: 100%;
+}
+
+.shoes-slider .owl-nav>button {
+   position: absolute;
+   top: -200px;
+}
+
+.shoes-slider .owl-nav>button span {
+   display: none
+}
+
+.shoes-slider .owl-nav>button.owl-prev {
+   right: 40px;
+}
+
+.shoes-slider .owl-nav>button.owl-next {
+   right: 10px
+}
+
+.shoes-slider .owl-nav>button::before {
+   content: "";
+   display: block;
+   width: 15px;
+   height: 15px;
+   border-top: 2px solid #525252;
+}
+
+.shoes-slider .owl-nav>button.owl-prev::before {
+   border-left: 2px solid #525252;
+   transform: rotate(-45deg);
+}
+
+.shoes-slider .owl-nav>button.owl-next::before {
+   border-right: 2px solid #525252;
+   transform: rotate(45deg);
+}
+
+.section8 h4{
+    font-size: 24px;
+    color: #111111;  
+}
+
+.section8 .shoes-slider h4{
+    font-size: 16px;
+    color: #111111;
+}
+
+.section8 .shoes-slider p{
+    font-size: 16px;
+    color: #757575;
+}
+
+.section8 .shoes-slider .dis_price{
+    font-size: 16px;
+    color: #111111;
+    position: absolute;
+    bottom: 20px;
+    right: 85px;
+    text-decoration: line-through;
+}
+
+.section8 .shoes-slider .price{
+    font-size: 16px;
+    color: #111111;
+    position: absolute;
+    bottom: 20px;
+    right: 0;
+}

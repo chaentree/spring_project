@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="b">
+
+	<select id="b_list" parameterType="java.lang.String" resultType="buy" >
+		select * from n_buy where userid = #{userid}
+	</select>
+	
+	<update id="b_del" parameterType="java.lang.String">
+		UPDATE N_BUY SET order_info = '-1' 
+			where orderid = #{orderid}
+	</update>
+	
+	<select id="getProductList" parameterType="java.lang.String" resultType="HashMap"> 
+	SELECT CATEGORY_ID, product_id, P_NAME, P_SIZE, P_INFO, P_PRICE FROM N_PRODUCT 
+	WHERE userid = #{userid} </select>
+
+	
+
+</mapper>
+
+
+
+
+
+
+
+
+
+
+
+

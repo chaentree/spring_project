@@ -1,0 +1,30 @@
+@charset "UTF-8";
+
+*{margin : 0; padding : 0;}
+
+#main_box h1{text-align : center;
+			 text-shadow : 3px 3px 5px gray;
+			 color : white;}
+			 
+#main_box{width : 1141px;
+		  margin: 0 auto;}
+		  
+#photo_box{margin : 20px auto;
+		   width : 1141px;
+		   height : 4461px;
+		   border : 1px solid blue;
+		   padding : 10px;
+		   overflow : auto;	/* 스크롤이 필요할 때만 보여주는 옵션 */
+		   box-shadow : 5px 5px 10px gray;}
+		   
+.photo_type{width :351px;
+			height : 538px;
+			/*border : 1px solid green;*/
+			float : left;
+			margin : 10px;
+}
+.photo_type img{ display : block;
+				 margin	 : auto;
+				 width	 : 335px;
+				 height	 : 335px;
+}
